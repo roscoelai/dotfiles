@@ -49,8 +49,13 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 
-nnoremap <f4> :w !time ./%<cr>
+nnoremap <f4> :w !time ./%
 nnoremap <f5> :w<cr> :w !time ./%<cr>
+
+highlight ColorColumn ctermbg=green ctermfg=black
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
 
 
 
