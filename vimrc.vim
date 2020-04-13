@@ -1,4 +1,4 @@
-" .vimrc
+" vimrc.vim (rename to .vimrc)
 
 " colorscheme ron
 
@@ -56,6 +56,22 @@ highlight ColorColumn ctermbg=green ctermfg=black
 if exists('+colorcolumn')
     set colorcolumn=80
 endif
+
+
+
+" call pathogen#infect()
+" 
+" fun! JumpToDef()
+"   if exists("*GotoDefinition_" . &filetype)
+"     call GotoDefinition_{&filetype}()
+"   else
+"     exe "norm! \<C-]>"
+"   endif
+" endf
+" 
+" " Jump to tag
+" nn <M-g> :call JumpToDef()<cr>
+" ino <M-g> <esc>:call JumpToDef()<cr>i
 
 
 
