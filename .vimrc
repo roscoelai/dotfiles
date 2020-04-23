@@ -1,4 +1,4 @@
-" vimrc.vim (rename to .vimrc)
+" .vimrc
 
 " colorscheme ron
 
@@ -49,36 +49,32 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 
-nnoremap <f4> :w !time ./%
-nnoremap <f5> :w<cr> :w !time ./%<cr>
-
 highlight ColorColumn ctermbg=green ctermfg=black
 if exists('+colorcolumn')
+    " set cc=80
+    " let &cc="80,".join(range(100,999),",")
     set colorcolumn=80
 endif
 
-
-
-" call pathogen#infect()
-" 
-" fun! JumpToDef()
-"   if exists("*GotoDefinition_" . &filetype)
-"     call GotoDefinition_{&filetype}()
-"   else
-"     exe "norm! \<C-]>"
-"   endif
-" endf
-" 
-" " Jump to tag
-" nn <M-g> :call JumpToDef()<cr>
-" ino <M-g> <esc>:call JumpToDef()<cr>i
+nnoremap <f4> :w !time ./<c-r>% 
+nnoremap <f5> :w<cr> :w !time ./%<cr>
+nnoremap <f6> :w<cr> : -o <c-r>%<c-w>out <c-r>% <home>w !
 
 
 
-" Legacy:
-" =======
+call pathogen#infect()
 
-" let &cc="80,".join(range(100,999),",")
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " if has("autocmd")
 " 	augroup templates
