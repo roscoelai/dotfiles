@@ -34,8 +34,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
-set foldmethod=manual
-" set foldmethod=indent
+set foldmethod=indent
+" set foldmethod=manual
 nnoremap <space> za
 
 nnoremap j gj
@@ -59,25 +59,3 @@ endif
 nnoremap <f4> :w !time ./<c-r>% 
 nnoremap <f5> :w<cr> :w !time ./%<cr>
 nnoremap <f6> :w<cr> : -o <c-r>%<c-w>out <c-r>% <home>w !
-
-
-
-call pathogen#infect()
-
-fun! JumpToDef()
-  if exists("*GotoDefinition_" . &filetype)
-    call GotoDefinition_{&filetype}()
-  else
-    exe "norm! \<C-]>"
-  endif
-endf
-
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
-
-" if has("autocmd")
-" 	augroup templates
-" 		autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
-" 	augroup END
-" endif
