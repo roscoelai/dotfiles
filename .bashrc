@@ -3,20 +3,15 @@
 calc() { awk "BEGIN {print $*}"; }
 md5() { CertUtil -hashfile $1 MD5; }
 
-source ~/setenv.sh
-
-alias tree="tree.com //a"
+alias ll="ls -lah"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
-alias dl="cd $DL"
-alias dm="cd $DM"
-alias vpn="start chrome --url $VPN"
-alias hpc="time ssh $USR@$HPC"
-alias woa=$WOA
-
+alias dl='cd ${USERPROFILE}/Downloads'
 alias lua="winpty lua53"
+
+source ~/setenv.sh
 
 dl
 
