@@ -1,25 +1,14 @@
 # .bashrc
 
-calc() { awk "BEGIN {print $*}"; }
-md5() { CertUtil -hashfile $1 MD5; }
+function calc() { awk "BEGIN {print $*}"; }
+function md5() { CertUtil -hashfile $1 MD5; }
 
-alias ll="ls -lah"
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
+export PATH=$(\
+    echo "$(cat ~/.bash_paths | tr '\n' ':')$PATH" | \
+    awk 'BEGIN{RS=":"; ORS=":"} !_[$0]++' | \
+    sed -E 's/:+$//'\
+)
 
-alias dl='cd ${USERPROFILE}/Downloads'
-alias lua="winpty lua53"
-
-source ~/setenv.sh
+source ~/.bash_aliases
 
 dl
-
-
-
-# Legacy
-# ======
-# alias google="start chrome --incognito --url www.google.com"
-# alias python="winpty python"
-# alias env1="start cmd //k conda activate env1"
-# alias jlab="start cmd //k conda run -n env1 jupyter lab --ip 127.0.0.1"
