@@ -9,6 +9,7 @@ function initialize() {
     printf "Transparency=medium\nWindow=full" > /etc/minttyrc
     cp /etc/profile /etc/_profile
     sed -i "28i HOME=$h\nHOMEDRIVE=$h\nHOMEPATH=$h\nHISTFILE=$h\n" /etc/profile
+    git config --global core.askPass ""
 }
 
 initialize
