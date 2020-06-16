@@ -10,6 +10,9 @@ function initialize() {
     cp /etc/profile /etc/_profile
     sed -i "28i HOME=$h\nHOMEDRIVE=$h\nHOMEPATH=$h\nHISTFILE=$h\n" /etc/profile
     git config --global core.askPass ""
+    git config --global credential.helper ""
+    git config --global user.name "Roscoe Lai"
+    git config --global user.email ahnouuyz@gmail.com
 }
 
 initialize
