@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # File: gitw64p_downloads.sh
 
@@ -67,36 +67,8 @@ downloads
 
 ## Others
 
-# Download java
-# ver="13.0.2-14"
-# fver="oracle-jdk-portable-win64-$ver"
-# file="$fver.7z"
-# repo="https://github.com/portapps/oracle-jdk-portable/releases/download"
-# curl -L "$repo/$ver/$file" > "/opt/.packages/$file"
-# mkdir -p "/opt/$fver"
-# 7z x "/opt/.packages/$file" -o"/opt/$fver"
-# echo "/opt/$fver/app/bin" >> "/home/.bash_paths"
-
-# Download Miniconda3 Windows 64-bit
-# file="Miniconda3-latest-Windows-x86_64.exe"
-# curl -LO "https://repo.anaconda.com/miniconda/$file"
-
 # Download rust
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Download tcc
-# fver="tcc-0.9.27"
-# file="$fver-win64-bin.zip"
-# repo="http://download.savannah.gnu.org/releases/tinycc"
-# curl "$repo/$file" > "/opt/.packages/$file"
-# mkdir -p "/opt/$fver"
-# unzip "/opt/.packages/$file" -d "/opt/$fver"
-# echo "/opt/$fver" >> "/home/.bash_paths"
-
-# Download vim-code-dark
-# gh_clone "tomasiser" "vim-code-dark" "/home/.vim/pack/default/start"
-
-## Challenging
 
 # Download tmux
 # fver="tmux-3.1-1"
