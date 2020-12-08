@@ -12,6 +12,6 @@ curl "${url}" > "${HOME}/.vimrc"
 
 # Install packages
 pkg upgrade
-pkg install gcc git make man python3 r-base tree vim
-# pkg install numpy screen
+pkg install clang git make man python3 r-base tree vim
+# pkg install numpy rust screen
 
