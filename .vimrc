@@ -59,3 +59,4 @@ endif
 nnoremap <f4> :w !time ./<c-r>% 
 nnoremap <f5> :w<cr> :w !time ./%<cr>
 nnoremap <f6> :w<cr> : -o <c-r>%<c-w>out <c-r>% <home>w !
+nnoremap t :w<cr>:!time bash %<cr>
