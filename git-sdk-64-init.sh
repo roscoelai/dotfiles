@@ -36,3 +36,5 @@ fi
 # git config --global credential.helper ""
 # git config --global user.name "John Doe"
 # git config --global user.email johndoe@example.com
+
+# Edit /etc/profile.d/git-sdk.sh
