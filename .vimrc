@@ -1,5 +1,15 @@
 " .vimrc
 
+" set nocp
+set nocompatible
+
+" Try out:
+" --------
+" set rnu
+" set nornu
+nnoremap <leader>r :set relativenumber<CR>
+nnoremap <leader>R :set norelativenumber<CR>
+
 " colorscheme ron
 
 syntax enable
@@ -56,7 +66,7 @@ if exists('+colorcolumn')
     set colorcolumn=80
 endif
 
-nnoremap <f4> :w !time ./<c-r>% 
+" nnoremap <f4> :w !time ./<c-r>% 
 nnoremap <f5> :w<cr> :w !time ./%<cr>
-nnoremap <f6> :w<cr> : -o <c-r>%<c-w>out <c-r>% <home>w !
+" nnoremap <f6> :w<cr> : -o <c-r>%<c-w>out <c-r>% <home>w !
 nnoremap t :w<cr>:!time bash %<cr>
