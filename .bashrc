@@ -1,29 +1,36 @@
-# User dependent .bashrc file
+# .bashrc
+# 2021-10-30
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-export USERPROFILE=${USERPROFILE//\\//}
-export PATH="${PATH}:/opt/R-4.0.3/bin:/opt/RStudio-1.3.1093/bin"
+set -o noclobber
 
-alias dl='cd ${USERPROFILE}/Downloads'
-alias ll='ls -lah'
+export USERPROFILE=${USERPROFILE//\\//}
+export USERPROFILE=${USERPROFILE/C://c}
+
+export PATH="\
+${PATH}:\
+"
+
 alias l.='ls -d .* --color=auto'
+alias ll='ls -ahl --color=auto'
 alias grep='grep --color'
 alias tree='tree -hC'
 
-launch() { dl; ""$*""; cd -; }
+# abc() { awk "BEGIN { print "$*" }"; }
+abc() { gawk -M "BEGIN { print "$*" }"; }
 
-alias rstudio='launch start rstudio'
-alias sqlite='launch start sqlite3'
-alias conda='launch start cmd //k \
-    ${EXEPATH}\\opt\\Miniconda3\\Scripts\\activate.bat \
-    ${EXEPATH}\\opt\\Miniconda3'
+conda() {
+    local miniconda3="${EXEPATH}/opt/Miniconda3"
+    local activate="${miniconda3}/Scripts/activate.bat"
+    start cmd //k "${activate}" "${miniconda3}"
+}
 
 echo_color() { echo -e '\033[0;'"$*"'\033[0m'; }
 
-# green() { echo_color '32m'"$*"; }
-# yellow() { echo_color '33m'"$*"; }
-# magenta() { echo_color '35m'"$*"; }
-# cyan() { echo_color '36m'"$*"; }
- 
+green() { echo_color '32m'"$*"; }
+yellow() { echo_color '33m'"$*"; }
+magenta() { echo_color '35m'"$*"; }
+cyan() { echo_color '36m'"$*"; }
+white() { echo_color '0m'"$*"; }
