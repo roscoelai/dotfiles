@@ -1,5 +1,5 @@
 " .vimrc ( or _gvimrc )
-" 2021-10-30
+" 2022-03-12
 
 set nocompatible " nocp ( redundant? )
 
@@ -10,13 +10,12 @@ filetype indent on
 " let mapleader=","
 
 if has("gui_running")
-    " For _gvimrc
     colorscheme darkblue
     set guifont=Consolas:h10:cANSI
     set columns=110 " co=110
     set lines=40
 else
-    " colorscheme ron
+    colorscheme ron
     nnoremap <f4> :w<cr> :! time ./%
     nnoremap <f5> :w<cr> :! time ./%<cr>
     " nnoremap <f5> :w<cr> :w !time ./%<cr>
@@ -29,7 +28,8 @@ if exists("+colorcolumn")
     " let &cc="80,".join(range(100,999),",")
 endif
 
-set relativenumber " rnu ( <- new! )
+" ( new! ) Trying out
+" set relativenumber " rnu
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>R :set norelativenumber<cr>
 
@@ -70,3 +70,6 @@ map <c-l> <c-w>l
 map <c-tab> :bnext<cr>
 map <c-s-tab> :bprevious<cr>
 " inoremap jk <esc>
+
+
+
