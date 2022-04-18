@@ -16,8 +16,8 @@ if has("gui_running")
     set lines=40
 else
     colorscheme ron
-    nnoremap <f4> :w<cr> :! time ./%
-    nnoremap <f5> :w<cr> :! time ./%<cr>
+    nnoremap <f4> :w<cr> :! time %:p
+    nnoremap <f5> :w<cr> :! time %:p<cr>
     " nnoremap <f5> :w<cr> :w !time ./%<cr>
     " nnoremap t :w<cr> :! time bash %<cr>
 endif
