@@ -1,5 +1,5 @@
 " .vimrc ( or _gvimrc )
-" 2022-03-12
+" 2022-04-23
 
 set nocompatible " nocp ( redundant? )
 
@@ -18,7 +18,7 @@ else
     colorscheme ron
     nnoremap <f4> :w<cr> :! time %:p
     nnoremap <f5> :w<cr> :! time %:p<cr>
-    " nnoremap <f5> :w<cr> :w !time ./%<cr>
+    " nnoremap <f5> :w<cr> :w !time %:p<cr>
     " nnoremap t :w<cr> :! time bash %<cr>
 endif
 
@@ -28,7 +28,7 @@ if exists("+colorcolumn")
     " let &cc="80,".join(range(100,999),",")
 endif
 
-" ( new! ) Trying out
+" Disable for now, not too conducive for online collaboration
 " set relativenumber " rnu
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>R :set norelativenumber<cr>
