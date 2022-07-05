@@ -1,0 +1,13 @@
+# .screenrc
+# 2022-07-05
+
+# References:
+# - https://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
+# - http://aperiodic.net/screen/man:string_escapes
+
+# backtick 0 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+# hardstatus alwayslastline "%{= KW} %H [%`] %{= Kw}|%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw %=%C%a %Y-%M-%d"
+
+backtick 0 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | sed "s/^[0-9]\+\.//"'
+hardstatus alwayslastline "%{= KW} %H [%`] %{= Kw}| %Y-%m-%d %0c |%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw"
+
