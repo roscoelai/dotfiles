@@ -1,5 +1,7 @@
 # .screenrc
-# 2022-07-22
+# 2022-09-18
+
+altscreen on
 
 # Get sockname
 backtick 0 30 30 sh -c 'screen -ls | sed -n "s/^.*$PPID.\([^[:space:]]*\).*$/\1/p"'
@@ -8,7 +10,7 @@ backtick 1 600 600 sh -c 'hostname -I | awk "{print \$1}"'
 # Get local IP
 backtick 2 600 600 sh -c 'echo "${SSH_CLIENT:-$SSH_CONNECTION}" | cut -d" " -sf1'
 
-hardstatus alwayslastline "%{= KW} %2` -> %1` (%H) [%0`] %{= Kw}| %Y-%m-%d %0c |%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw"
+hardstatus alwaysfirstline "%{= KW} %2` -> %1` (%H) [%0`] %{= Kw}| %Y-%m-%d %0c |%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw"
 
 # -----------------------------------------------------------------------------
 
