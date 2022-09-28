@@ -1,0 +1,15 @@
+# ~/.ssh/config
+# 2022-09-27
+
+Host name-of-server
+    Hostname 12.34.56.78
+    User username
+    IdentityFile /path/to/private-key
+    LocalForward 127.0.0.1:2112 127.0.0.1:3389
+    LocalForward 127.0.0.1:9999 127.0.0.1:9999
+    AddressFamily inet
+    Compression yes
+    ForwardAgent no
+    ForwardX11 no
+    GSSAPIDelegateCredentials no
+
