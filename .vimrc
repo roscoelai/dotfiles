@@ -1,5 +1,5 @@
 " .vimrc ( or _gvimrc )
-" 2022-04-23
+" 2022-12-08
 
 set nocompatible " nocp ( redundant? )
 
@@ -15,10 +15,14 @@ if has("gui_running")
     set columns=110 " co=110
     set lines=40
 else
-    colorscheme ron
-    nnoremap <f4> :w<cr> :! time %:p
-    nnoremap <f5> :w<cr> :! time %:p<cr>
-    " nnoremap <f5> :w<cr> :w !time %:p<cr>
+    try
+        colorscheme solarized
+    catch /^Vim\%((\a\+)\)\=:E185/
+        colorscheme ron
+    endtry
+    nnoremap <f4> :w<cr> :! time '%:p'
+    nnoremap <f5> :w<cr> :! time '%:p'<cr>
+    " nnoremap <f5> :w<cr> :w !time '%:p'<cr>
     " nnoremap t :w<cr> :! time bash %<cr>
 endif
 
@@ -28,7 +32,7 @@ if exists("+colorcolumn")
     " let &cc="80,".join(range(100,999),",")
 endif
 
-" Disable for now, not too conducive for online collaboration
+" Disable relativenumber for online collaboration
 " set relativenumber " rnu
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>R :set norelativenumber<cr>
