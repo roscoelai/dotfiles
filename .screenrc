@@ -1,7 +1,14 @@
 # .screenrc
-# 2022-09-18
+# 2023-09-03
 
+# Launch less, vim, etc. in "another window".
 altscreen on
+
+defscrollback 1000
+
+# https://serverfault.com/questions/20237/setting-term-for-gnu-screen
+# Prevent "WARNING: terminal is not fully functional".
+term screen-256color
 
 # Get sockname
 backtick 0 30 30 sh -c 'screen -ls | sed -n "s/^.*$PPID.\([^[:space:]]*\).*$/\1/p"'
