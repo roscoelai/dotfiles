@@ -1,5 +1,5 @@
 " .vimrc ( or _gvimrc )
-" 2022-12-08
+" 2024-07-12
 
 set nocompatible " nocp ( redundant? )
 
@@ -18,7 +18,7 @@ else
     try
         colorscheme solarized
     catch /^Vim\%((\a\+)\)\=:E185/
-        colorscheme ron
+        colorscheme zaibatsu
     endtry
     nnoremap <f4> :w<cr> :! time '%:p'
     nnoremap <f5> :w<cr> :! time '%:p'<cr>
