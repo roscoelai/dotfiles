@@ -1,5 +1,5 @@
 " .vimrc ( or _gvimrc )
-" 2022-12-08
+" 2024-09-12
 
 set nocompatible " nocp ( redundant? )
 
@@ -18,7 +18,11 @@ else
     try
         colorscheme solarized
     catch /^Vim\%((\a\+)\)\=:E185/
-        colorscheme ron
+        try
+	    colorscheme zaibatsu
+        catch /^Vim\%((\a\+)\)\=:E185/
+            colorscheme ron
+        endtry
     endtry
     nnoremap <f4> :w<cr> :! time '%:p'
     nnoremap <f5> :w<cr> :! time '%:p'<cr>
@@ -26,7 +30,7 @@ else
     " nnoremap t :w<cr> :! time bash %<cr>
 endif
 
-highlight ColorColumn ctermbg=green ctermfg=black guibg=darkgreen
+highlight ColorColumn ctermbg=darkgray ctermfg=black guibg=darkgreen
 if exists("+colorcolumn")
     set colorcolumn=80 " cc=80
     " let &cc="80,".join(range(100,999),",")
@@ -37,6 +41,7 @@ endif
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>R :set norelativenumber<cr>
 
+set ruler " ru
 set number " nu
 set showcmd " sc
 set cursorline " cul
